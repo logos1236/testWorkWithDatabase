@@ -1,0 +1,34 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/test_db
+    driver-class-name: org.postgresql.Driver
+    username: test
+    password: test
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+        default_schema: public
+        dialect: org.hibernate.dialect.PostgreSQL9Dialect
+        show_sql: false
+        format_sql: true
+
+logging:
+  file:
+    name: logs/test_db.log
+    max-size: 10MB
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n"
+  level:
+    root: info
+    donos.mcduck: debug
+    org:
+      apache:
+        http:
+          client:
+            protocol: error
