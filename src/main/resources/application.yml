@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/test_db
+    url: jdbc:postgresql://localhost:5432/test
     driver-class-name: org.postgresql.Driver
     username: test
     password: test
@@ -14,7 +14,7 @@ spring:
           use_jdbc_metadata_defaults: false
         default_schema: public
         dialect: org.hibernate.dialect.PostgreSQL9Dialect
-        show_sql: false
+        show_sql: true
         format_sql: true
 
 logging:
